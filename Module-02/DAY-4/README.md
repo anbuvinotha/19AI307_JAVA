@@ -1,65 +1,63 @@
-# Ex.No:2(C)    SINGLE ARRAY
+# Ex.No:2(D) MULTI-DIMENSIONAL ARRAY
 
 ## AIM:
-To create a java program to read 5 values and display the all 5 values from array using single dimensional array.
+To create a java program that returns the sum of all the values in a 2D array.
 
 ## ALGORITHM :
 1.	Start the program.
-2.	2.	Import the `Scanner` class from the `java.util` package
-3.	Define a class named `ArrayExample`
-4.	Inside the `main` method:
--	a) Create a `Scanner` object called `scanner` to take user input
--	b) Declare an integer array `values` of size 5
--	c) Use a `for` loop to iterate from `i = 0` to `i < 5`:
--   d) Take input from the user and store it in `values[i]`
-5.	Print "Elements in Array are :"
-6.	Use another `for` loop to iterate from `i = 0` to `i < 5`:
--	a) Print each element in `values` followed by a space
-7.	Close the `scanner` to release resources
+2.	Import `Scanner` and define class `sum`
+3.	In `main`:
+-	a) Create `Scanner` object `sc`
+-	b) Read `rows` and `cols` from user
+-	c) Declare 2D array `arr[rows][cols]`
+4.	Populate `arr` using nested loops with user input
+5.	Initialize `sum` to `0`
+6.	Calculate the sum of all elements in `arr` using nested loops
+7.	Print "The sum of all values in the 2D array is: " + `sum`
 8.	End
-
-
 
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Single Array using Java
-Developed by: Kavinraja D
-RegisterNumber: 212222240047
+Program to implement a Multi Dimensional Array using Java
+Developed by: Anbu vinotha S
+RegisterNumber: 212223230015
 */
 ```
 
 ## Sourcecode.java:
 ```
+import java.util.Scanner;
 
-import java.util.*;
+public class LargestElement {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-public class Main
-{
-   public static void main(String args[])
-   {    
+        int size = scanner.nextInt();
+        int[] array = new int[size];
 
-	Scanner sc=new Scanner(System.in);
-	
-	int a[]=new int[5];//declaration    	 
-	
-        for(int i=0; i<5; i++)
-        {
-           a[i] = sc.nextInt();
-        }   
-        System.out.print("Elements in Array are :\n");
-        for(int i=0; i<5; i++)
-        {
-           System.out.print(a[i] + "  ");
-        }  
-   }
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        int largest = array[0]; // Assume the first element is the largest initially
+
+        for (int i = 1; i < size; i++) {
+            if (array[i] > largest) {
+                largest = array[i];
+            }
+        }
+
+        System.out.println("The largest element in the array is: " + largest);
+
+        scanner.close();
+    }
 }
-	
-
 
 ```
+
 
 
 
@@ -67,21 +65,12 @@ public class Main
 
 
 ## OUTPUT:
-```
-Input       Expected                                  Got
 
-3           Elements in Array are :                   Elements in Array are :                   
-            3  4  5  6  7                             3  4  5  6  7
-4
-5
-6
-7
+<img width="761" alt="image" src="https://github.com/user-attachments/assets/815af82b-dc82-46f2-b13f-96ce82432fbd" />
 
-
-```
 
 
 ## RESULT:
-Thus, the Java program Thus the java program to read 5 values and display the all 5 values from array using single dimensional  was executed successfully.
+Thus the java program that returns the sum of all the values in a 2D array was executed successfully.
 
 
